@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_id: 
+  memory_size: MyString
+  processor: MyString
+  hard_disk: MyString
+  ram: MyString
+  os: MyString
+  antivirus: MyString
+  socket: MyString
+  form_factor: MyString
+  screen_size: MyString
+  zoom_level: MyString
+  increase: MyString
+  type: 
+  capacity: MyString
+
+two:
+  product_id: 
+  memory_size: MyString
+  processor: MyString
+  hard_disk: MyString
+  ram: MyString
+  os: MyString
+  antivirus: MyString
+  socket: MyString
+  form_factor: MyString
+  screen_size: MyString
+  zoom_level: MyString
+  increase: MyString
+  type: 
+  capacity: MyString
