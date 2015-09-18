@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917161314) do
+ActiveRecord::Schema.define(version: 20150917233447) do
+
+  create_table "api_keys", force: :cascade do |t|
+    t.string   "secret_token", limit: 255
+    t.boolean  "enable"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "brands", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -27,16 +34,17 @@ ActiveRecord::Schema.define(version: 20150917161314) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer  "sub_category_id", limit: 4
-    t.integer  "brand_id",        limit: 4
-    t.string   "code",            limit: 255
-    t.string   "name",            limit: 255
-    t.string   "description",     limit: 255
-    t.integer  "stock",           limit: 4
-    t.integer  "minimum_stock",   limit: 4
-    t.float    "price",           limit: 24
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "sub_category_id",    limit: 4
+    t.integer  "brand_id",           limit: 4
+    t.string   "code",               limit: 255
+    t.string   "name",               limit: 255
+    t.string   "description",        limit: 255
+    t.integer  "stock",              limit: 4
+    t.integer  "minimum_stock",      limit: 4
+    t.float    "price",              limit: 24
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.boolean  "has_especification"
   end
 
   add_index "products", ["brand_id"], name: "index_products_on_brand_id", using: :btree

@@ -41,7 +41,6 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (6.0.2)
-    choice (0.2.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -74,10 +73,6 @@ GEM
     mysql2 (0.3.19)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
-    rabl-rails (0.4.1)
-      activesupport (>= 3.1)
-      railties (>= 3.1)
-      thread_safe (~> 0.3.1)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -98,11 +93,6 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-erd (1.4.1)
-      activerecord (>= 3.2)
-      activesupport (>= 3.2)
-      choice (~> 0.2.0)
-      ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
     railties (4.2.4)
@@ -113,9 +103,6 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
-    responders (2.1.0)
-      railties (>= 4.2.0, < 5)
-    ruby-graphviz (1.2.2)
     sass (3.4.18)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -158,10 +145,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (~> 0.3.18)
-  rabl-rails
   rails (= 4.2.4)
-  rails-erd
-  responders
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
