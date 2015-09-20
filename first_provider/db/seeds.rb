@@ -29,9 +29,10 @@ unless Product.all.exists?
 	Product.create(brand_id: 1, name: 'Producto 3', sub_category_id: 1, code: 'CCC', has_especification: true)
 	Product.create(brand_id: 1, name: 'Producto 4', sub_category_id: 1, code: 'DDD', has_especification: false)
 	Product.create(brand_id: 1, name: 'Producto 5', sub_category_id: 1, code: 'EEE', has_especification: false)
-end	
+end
 
-Product.create(brand_id: 2, name: 'papas', sub_category_id: 4, code: 'EEE', has_especification: false)
-Product.create(brand_id: 2, name: 'camotes', sub_category_id: 4, code: 'FFF', has_especification: false)
-Product.create(brand_id: 2, name: 'yucas', sub_category_id: 4, code: 'GGG', has_especification: false)
-Product.create(brand_id: 2, name: 'arroz', sub_category_id: 4, code: 'HHH', has_especification: false)
+# Generando api keys
+
+unless ApiKey.all.exists?
+	10.times do ApiKey.create end
+end
