@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
 	respond_to :json, :xml
-	before_action :restrict_access
 
 	def index
 		@products = Product.select(:name, :id)
