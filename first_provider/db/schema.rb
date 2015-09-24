@@ -13,37 +13,40 @@
 
 ActiveRecord::Schema.define(version: 20150917233447) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "api_keys", force: :cascade do |t|
-    t.string   "secret_token", limit: 255
+    t.string   "secret_token"
     t.boolean  "enable"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "brands", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string   "code",       limit: 255
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "code"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer  "sub_category_id",    limit: 4
-    t.integer  "brand_id",           limit: 4
-    t.string   "code",               limit: 255
-    t.string   "name",               limit: 255
-    t.string   "description",        limit: 255
-    t.integer  "stock",              limit: 4
-    t.integer  "minimum_stock",      limit: 4
-    t.float    "price",              limit: 24
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.integer  "sub_category_id"
+    t.integer  "brand_id"
+    t.string   "code"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "stock"
+    t.integer  "minimum_stock"
+    t.float    "price"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.boolean  "has_especification"
   end
 
@@ -51,32 +54,32 @@ ActiveRecord::Schema.define(version: 20150917233447) do
   add_index "products", ["sub_category_id"], name: "index_products_on_sub_category_id", using: :btree
 
   create_table "specifications", force: :cascade do |t|
-    t.integer  "product_id",  limit: 4
-    t.string   "memory_size", limit: 255
-    t.string   "processor",   limit: 255
-    t.string   "hard_disk",   limit: 255
-    t.string   "ram",         limit: 255
-    t.string   "os",          limit: 255
-    t.string   "antivirus",   limit: 255
-    t.string   "socket",      limit: 255
-    t.string   "form_factor", limit: 255
-    t.string   "screen_size", limit: 255
-    t.string   "zoom_level",  limit: 255
-    t.string   "increase",    limit: 255
-    t.string   "type",        limit: 255
-    t.string   "capacity",    limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "product_id"
+    t.string   "memory_size"
+    t.string   "processor"
+    t.string   "hard_disk"
+    t.string   "ram"
+    t.string   "os"
+    t.string   "antivirus"
+    t.string   "socket"
+    t.string   "form_factor"
+    t.string   "screen_size"
+    t.string   "zoom_level"
+    t.string   "increase"
+    t.string   "type"
+    t.string   "capacity"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "specifications", ["product_id"], name: "index_specifications_on_product_id", using: :btree
 
   create_table "sub_categories", force: :cascade do |t|
-    t.integer  "category_id", limit: 4
-    t.string   "code",        limit: 255
-    t.string   "name",        limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "category_id"
+    t.string   "code"
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "sub_categories", ["category_id"], name: "index_sub_categories_on_category_id", using: :btree

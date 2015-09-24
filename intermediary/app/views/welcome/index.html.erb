@@ -1,4 +1,5 @@
 <% @products.each do |product| %>
-	<h1><%= product['name'] %></h1>
-	<h1><%= product['price'] %></h1>
+	<h1><%= product['name'] rescue 'error' %></h1>
+	<h1><%= product['price'] rescue 'error' %></h1>
 <% end %>
+<%= @products %>

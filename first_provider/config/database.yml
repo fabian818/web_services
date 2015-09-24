@@ -10,7 +10,7 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   pool: 5
   username: root
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: first_provider_production
-  username: first_provider
-  password: <%= ENV['FIRST_PROVIDER_DATABASE_PASSWORD'] %>
+  database: <% ENV['DATABASE_URL'] %>
+  username: duxwqqzgveboao
+  password: 9-o0Zfv2Q6JLmK8BDV1veGavG3
