@@ -1,5 +1,28 @@
-<% @products.each do |product| %>
-	<h1><%= product['name'] rescue 'error' %></h1>
-	<h1><%= product['price'] rescue 'error' %></h1>
-<% end %>
-<%= @products %>
+<table class="table table-striped table-fixedheader">
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Descripción</th>
+			<th>Categoría</th>
+			<th>SubCategoría</th>
+			<th>Marca</th>
+			<th>Precio</th>
+			<th>Stock</th>
+			<th>Stock mínimo</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @products.each do |product| %>
+		<tr>
+			<td><%= product['name'] rescue 'error' %></td>
+			<td><%= product['description'] rescue 'error' %></td>		
+			<td><%= product['category'] rescue 'error' %></td>
+			<td><%= product['sub_category'] rescue 'error' %></td>
+			<td><%= product['brand'] rescue 'error' %></td>
+			<td><%= product['price'] rescue 'error' %></td>
+			<td><%= product['stock'] rescue 'error' %></td>
+			<td><%= product['minimum_stock'] rescue 'error' %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

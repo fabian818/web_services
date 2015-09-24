@@ -10,8 +10,8 @@ class Product < ActiveRecord::Base
 	end
 
 	def set_columns
-		self.stock = 100
-		self.minimum_stock = 50
-		self.price = 25
+		self.stock ||= 100
+		self.minimum_stock ||= 50
+		self.price ||= 25
 	end
 end

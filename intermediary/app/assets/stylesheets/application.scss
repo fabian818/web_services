@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ table.table-fixedheader>tbody {
+ 	display: block;
+ }
+
+ table.table-fixedheader>tbody {
+ 	overflow-y: auto;
+ 	height: 615px; /*placeholder:  override as needed*/
+ }
+
+ table.table-fixedheader>thead>tr>th, table.table-fixedheader>tbody>tr>td {
+ 	float: left;
+ 	width: 120px; /*placeholder:  override as needed*/
+ }

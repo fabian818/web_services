@@ -52,7 +52,9 @@ unless Product.all.exists?
 		product_description = Faker::Name.title
 		brand = Brand.find_by_name(brands[rand(20)])
 		sub_category = SubCategory.find_by_code(sub_categories[rand(55)])
-		product = Product.create(name: product_name, description: product_description, brand: brand, sub_category: sub_category) if !Product.where("name = '#{product_name}'").exists?
+		price = Random.new.rand 0.0..200.50
+		price = price.round(2)
+		product = Product.create(name: product_name, description: product_description, price: price, stock: rand(50) + 50, minimum_stock: rand(50) + 20, brand: brand, sub_category: sub_category) if !Product.where("name = ?", product_name).exists? and product_name.include?("'")
 	end
 end
 

@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 	respond_to :json, :xml
 
 	def index
-		@products = Product.all
+		@products = Product.order(:price)
 		respond_with(@products)
 	end
 
