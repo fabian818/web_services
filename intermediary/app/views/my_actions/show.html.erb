@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @my_action.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @my_action.url %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @my_action.active %>
+</p>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @my_action.provider %>
+</p>
+
+<%= link_to 'Edit', edit_my_action_path(@my_action) %> |
+<%= link_to 'Back', my_actions_path %>

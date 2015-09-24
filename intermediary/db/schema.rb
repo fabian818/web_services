@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150924163054) do
+ActiveRecord::Schema.define(version: 20150924230127) do
+
+  create_table "my_actions", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.string   "url",         limit: 255
+    t.boolean  "active"
+    t.integer  "provider_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "my_actions", ["provider_id"], name: "index_my_actions_on_provider_id", using: :btree
 
   create_table "providers", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -21,4 +32,5 @@ ActiveRecord::Schema.define(version: 20150924163054) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "my_actions", "providers"
 end

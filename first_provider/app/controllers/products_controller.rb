@@ -6,6 +6,11 @@ class ProductsController < ApplicationController
 		respond_with(@products)
 	end
 
+	def search
+		@products = Product.where("name like '%#{params[:name]}%'").order(:price)
+		respond_with(@products)
+	end
+
 	def show
 
 	end

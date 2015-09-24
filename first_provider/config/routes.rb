@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'products/index' => "products#index", as: :products
 
+  get 'products/search' => 'products#search', as: :search_product
+
   get 'products/show'
 
   get 'products/new'
